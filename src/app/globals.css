@@ -1,0 +1,119 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f7f8fa;
+  --foreground: #0b1220;
+  --card: #ffffff;
+  --card-foreground: #0b1220;
+  --muted: #edf0f4;
+  --muted-foreground: #5f6b7a;
+  --border: #dce2e9;
+  --cyan: #08a8bd;
+}
+
+.dark {
+  --background: #070b12;
+  --foreground: #f3f7fb;
+  --card: #0c121c;
+  --card-foreground: #f3f7fb;
+  --muted: #121a26;
+  --muted-foreground: #8d9aac;
+  --border: #202a38;
+  --cyan: #5ee4f2;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --font-sans: var(--font-body), var(--font-chinese), system-ui, sans-serif;
+  --font-display: var(--font-display), var(--font-chinese), system-ui, sans-serif;
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #5ee4f2;
+  color: #071018;
+}
+
+.tech-grid {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--foreground) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--foreground) 5%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Used on permanently dark sections, so the ramp starts from a light tone in both themes. */
+.text-gradient {
+  background: linear-gradient(100deg, #f3f7fb 20%, #55d7e7 68%, #79a7ff);
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  border: 1px solid color-mix(in srgb, var(--foreground) 10%, transparent);
+  background: color-mix(in srgb, var(--card) 72%, transparent);
+  backdrop-filter: blur(18px);
+}
+
+.glass-dark {
+  border: 1px solid rgb(255 255 255 / 0.12);
+  background: rgb(12 18 28 / 0.6);
+  backdrop-filter: blur(18px);
+}
+
+@keyframes beam {
+  from { transform: translateX(-130%); }
+  to { transform: translateX(230%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-14px) rotate(1deg); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.45; transform: scale(0.96); }
+  50% { opacity: 0.8; transform: scale(1.03); }
+}
+
+.animate-beam { animation: beam 6s linear infinite; }
+.animate-float { animation: float 7s ease-in-out infinite; }
+.animate-pulse-soft { animation: pulse-soft 5s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
