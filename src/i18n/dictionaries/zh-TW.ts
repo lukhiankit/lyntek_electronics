@@ -800,7 +800,7 @@ export const zhTW = {
       eyebrow: "台北辦公室",
       headquarters: "總部",
       location: "台北，台灣",
-      addressPending: "街道地址將於上線核准後公布。",
+      address: "104 台北市中山區中山北路15段62號",
       inquiries: "諮詢窗口",
       general: "一般",
       sales: "業務",

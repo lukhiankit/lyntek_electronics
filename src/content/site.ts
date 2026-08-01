@@ -26,6 +26,8 @@ export const siteConfig = {
   salesEmail: "sales@lyntekelectronics.com",
   careersEmail: "careers@lyntekelectronics.com",
   headquarters: "Taipei, Taiwan",
+  address:
+    "No.62, Sec. 15, Zhongshan N. Rd., Zhongshan District, Taipei City 104, Taiwan (R.O.C.)",
 } as const;
 
 export const navigation: NavGroup[] = [

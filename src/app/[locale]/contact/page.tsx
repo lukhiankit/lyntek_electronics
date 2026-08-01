@@ -52,7 +52,7 @@ export default async function ContactPage({ params }: Props) {
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">
                     {contact.office.location}
                     <br />
-                    {contact.office.addressPending}
+                    {contact.office.address}
                   </p>
                 </div>
               </div>

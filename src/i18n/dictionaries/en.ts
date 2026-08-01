@@ -844,7 +844,8 @@ export const en = {
       eyebrow: "Taipei office",
       headquarters: "Headquarters",
       location: "Taipei, Taiwan",
-      addressPending: "Street address to be published after launch approval.",
+      address:
+        "No.62, Sec. 15, Zhongshan N. Rd., Zhongshan District, Taipei City 104, Taiwan (R.O.C.)",
       inquiries: "Inquiries",
       general: "General",
       sales: "Sales",

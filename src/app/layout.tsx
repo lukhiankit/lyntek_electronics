@@ -50,7 +50,9 @@ export default function RootLayout({
     description: siteConfig.description,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Taipei",
+      streetAddress: "No.62, Sec. 15, Zhongshan N. Rd., Zhongshan District",
+      addressLocality: "Taipei City",
+      postalCode: "104",
       addressCountry: "TW",
     },
     areaServed: "Worldwide",
